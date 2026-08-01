@@ -41,15 +41,29 @@
 
                 raise_layer {
 // -----------------------------------------------------------------------------------------
-// | ESC  |     |     |     |     |     |   | HOME| PGDN| PGUP| END | DEL | BSPC |
+// | ESC  | T4  |     |     |     |     |   | HOME| PGDN| PGUP| END | DEL | BSPC |
 // | BTCLR| BT0 | BT1 | BT2 | BT3 | BT4 |   | LFT | DWN |  UP | RGT |  [  |  ]   |
 // | SHFT |     |     |     |     |     |   |     |  \  |  (  |  )  |  `  |      |
 //                    | GUI |     | ENT |   | SPC |     | ALT |
                         bindings = <
-   &kp ESC    &trans       &trans       &trans       &trans       &trans         &kp HOME &kp PG_DN &kp PG_UP   &kp END     &kp DEL   &kp BSPC
+   &kp ESC    &tog 4       &trans       &trans       &trans       &trans         &kp HOME &kp PG_DN &kp PG_UP   &kp END     &kp DEL   &kp BSPC
    &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN  &kp UP      &kp RIGHT   &kp LBKT  &kp RBKT
    &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &kp BSLH  &kp KP_LPAR &kp KP_RPAR &kp GRAVE &trans
                              &kp LGUI &trans   &kp RET                           &kp SPACE   &trans    &kp RALT
+                        >;
+                };
+
+                game_layer {
+// -----------------------------------------------------------------------------------------
+// | ESC  |  T  |  Q  |  W  |  E  |  R  |   |     |  7  |  8  |  9  |     |      |
+// | CTRL | TAB |  A  |  S  |  D  |  F  |   |     |  4  |  5  |  6  |     |      |
+// | SHFT |  I  |  Z  |  X  |  C  |  V  |   |     |  1  |  2  |  3  |     |      |
+//                    |     |     | SPC |   | ENT |     |  0  |
+                        bindings = <
+   &kp ESC   &kp T   &kp Q  &kp W  &kp R  &kp F12    &kp SLASH &kp N7 &kp N8 &kp N9 &kp MINUS &tog 1
+   &kp LCTRL &kp TAB &kp A  &kp S  &kp F  &kp F11    &kp ASTRK &kp N4 &kp N5 &kp N6 &kp PLUS  &kp KP_DOT
+   &kp LSHFT &kp I   &kp Z  &kp X  &kp C  &kp F10    &kp EQUAL &kp N1 &kp N2 &kp N3 &kp RET   &trans
+                           &msc SCRL_DOWN &trans &kp RET      &kp SPACE  &trans   &kp N0
                         >;
                 };
         };
